@@ -1,0 +1,18 @@
+name:                factorization-diagrams
+version:             0.1.0.0
+synopsis:            A factorization diagrams server
+description:         A simple web server that renders factorization diagram for integers
+license:             MIT
+license-file:        LICENSE
+author:              Rodrigo Setti
+maintainer:          rodrigosetti@gmail.com
+copyright:           2013 Rodrigo Stti
+category:            Graphics
+build-type:          Simple
+cabal-version:       >=1.8
+
+executable factorization-diagrams
+  ghc-options:       -Wall
+  hs-source-dirs:    src
+  main-is:           Main.hs
+  build-depends:     base ==4.5.*
