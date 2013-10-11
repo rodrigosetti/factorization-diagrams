@@ -39,8 +39,8 @@ Fractal](http://en.wikipedia.org/wiki/Sierpinski_triangle):
 
 ![6561](examples/6561.png?raw=true)
 
-Powers of five (e.g. `5^6 = 156525`) forms the [Koch Snowflake
+Powers of five (e.g. `5^6 = 15625`) forms the [Koch Snowflake
 Fractal](http://en.wikipedia.org/wiki/Koch_snowflake):
 
-![156525](examples/156525.png?raw=true)
+![15625](examples/15625.png?raw=true)
 
