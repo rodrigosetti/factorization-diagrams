@@ -5,6 +5,27 @@ post](http://mathlesstraveled.com/2012/10/05/factorization-diagrams/) I decided
 to implement myself - for self educational purposes - the factorization diagram
 algorithm.
 
+## Usage
+
+After [building](http://www.haskell.org/cabal/users-guide/), run with following
+command line options:
+
+    factorization-diagrams [OPTIONS]
+
+    Common flags:
+      -w --width=INT         Desired width of the output image
+      -h --height=INT        Desired height of the output image
+      -o --output=FILE       Output file
+      -? --help              Display help message
+      -V --version           Print version information
+
+The program accepts one line from standard input which must contain a natural
+number. Example:
+
+    $ echo 16807 | factorization-diagrams -w 1024 -h 768 -o output.png
+
+## What is it?
+
 The factorization diagram for a given integer is a representation (by grouping)
 of it's prime factors.
 
@@ -14,20 +35,24 @@ factors You can see that there are clusterings for all it's prime factors: `2 *
 
 ![210](examples/210.png?raw=true)
 
-Here are the factorization diagrams for the numbers 1 to 36 (from left to
+Here are the factorization diagrams for the numbers `1` to `36` (from left to
 right, and then from top to bottom):
 
 ![1-36](examples/1-36.png?raw=true)
 
-Prime numbers, naturally, just have one factor: themselves. Therefore, their
-factorization diagram will look like a single cluster. See for example for the
-prime `331`:
+Note that the prime numbers are all represented as circles, as they have only
+one factor (themselves).
+
+Let's try a big prime, [`331`](http://oeis.org/A051200):
 
 ![331](examples/331.png?raw=true)
 
-If you multiply `331` by `2`, you get `662` (with now two prime factors):
+If you multiply `331` by `2`, you get `662`, yielding some sort of "split" in
+the diagram:
 
 ![662](examples/662.png?raw=true)
+
+### Fractals
 
 Powers of two (e.g. `2^10 = 1024`) forms the [Cantor Dust
 Fractal](http://en.wikipedia.org/wiki/Cantor_set#Cantor_dust):
@@ -43,4 +68,13 @@ Powers of five (e.g. `5^6 = 15625`) forms the [Koch Snowflake
 Fractal](http://en.wikipedia.org/wiki/Koch_snowflake):
 
 ![15625](examples/15625.png?raw=true)
+
+Here's a power of seven (e.g. `7^5 = 16807`), but I don't know if this fractal
+has a name:
+
+![16807](examples/16807.png?raw=true)
+
+It should be easy to prove that every sufficiently large prime power will
+render a fractal (i.e. repeating itself), because, by definition, it's factors
+are a list of repeating numbers.
 

@@ -10,13 +10,13 @@ import Diagrams.Prelude
 divides :: Integral a => a -> a -> Bool
 divides a b = b `mod` a == 0
 
--- | The infinite sequence of prime numbers
+-- | Sieve of Eratosthenes implementation of primes generation
 primes :: [Integer]
 primes = sieve [2..] where
              sieve [] = []
              sieve (x:xs) = x : filter (not . divides x) (sieve xs)
 
--- | Return the list of prime factors (with repetitions) for a positive integer
+-- | Factorization using Trial Division
 factor :: Integer -> [Integer]
 factor n
     | n < 2 = []
@@ -37,6 +37,8 @@ factorDiagram =
                       h = height d
 
 
+-- | Reads a single number from input, and generates the factorization diagram
+--   for that number
 main :: IO ()
 main = getLine >>= defaultMain . factorDiagram . read
 
